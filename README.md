@@ -1,7 +1,7 @@
 # Connectverse & MelodyVerse Authentication System
 
 ## Overview
-This project is a full-stack authentication system built using **React.js, Node.js, Express.js, PostgreSQL, and JWT**. It provides secure user authentication and registration for a fictional social media platform **Connectverse** on the backend while delivering visually appealing and user-friendly **login and signup screens** for a fictional music streaming service **MelodyVerse** on the frontend.
+This project is a full-stack authentication system built using **React.js, Node.js, Express.js, MongoDB, and JWT**. It provides secure user authentication and registration for a fictional social media platform **Connectverse** on the backend while delivering visually appealing and user-friendly **login and signup screens** for a fictional music streaming service **MelodyVerse** on the frontend.
 
 ## Features
 - Secure **JWT-based authentication**
@@ -14,7 +14,7 @@ This project is a full-stack authentication system built using **React.js, Node.
 - Basic **"Forgot Password"** functionality
 - **Redirects** after authentication
 - Error handling & validation messages
-- Protects against **SQL Injection & XSS** attacks
+- Protects against **NoSQL Injection & XSS** attacks
 
 ## Bonus Features
 - Password visibility toggle
@@ -27,13 +27,12 @@ This project is a full-stack authentication system built using **React.js, Node.
 ## Tech Stack
 ### Frontend (React.js)
 - **React 18** with Hooks
-- **Tailwind CSS** for styling
 - **React Router** for navigation
 - **React Toastify** for notifications
 
 ### Backend (Node.js + Express)
 - **Node.js** with Express.js
-- **PostgreSQL** for database
+- **MongoDB** with Mongoose for database
 - **JWT (jsonwebtoken)** for authentication
 - **bcrypt** for password hashing
 - **dotenv** for environment variables
@@ -43,7 +42,7 @@ This project is a full-stack authentication system built using **React.js, Node.
 ## Installation & Setup
 
 ### Prerequisites
-Make sure you have **Node.js** and **PostgreSQL** installed on your system.
+Make sure you have **Node.js** and **MongoDB** installed on your system.
 
 ### Backend Setup
 1. Clone the repository:
@@ -58,15 +57,11 @@ Make sure you have **Node.js** and **PostgreSQL** installed on your system.
    ```
 3. Create a `.env` file in the `backend` directory:
    ```sh
-   DATABASE_URL=your_database_url
+   MONGO_URI=your_mongodb_connection_string
    JWT_SECRET=your_jwt_secret
    PORT=5000
    ```
-4. Run database migrations (PostgreSQL):
-   ```sh
-   npm run migrate
-   ```
-5. Start the backend server:
+4. Start the backend server:
    ```sh
    npm start
    ```
@@ -117,7 +112,7 @@ POST /signup
 - **Bcrypt** for secure password hashing
 - **JWT tokens** for authentication & authorization
 - **Rate limiting** to prevent brute force attacks
-- **Input validation** to prevent SQL injection & XSS
+- **Input validation** to prevent NoSQL injection & XSS
 
 ---
 ## Future Enhancements
